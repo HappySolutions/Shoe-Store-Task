@@ -10,17 +10,23 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/imgView"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="32dp"
-            android:scaleType="centerCrop"
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottAnimation"
+            android:layout_width="wrap_content"
+            android:layout_height="400dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="163dp"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/splashanimated"
+            app:lottie_speed="1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/thankTxt" />
-
         <Button
             android:id="@+id/nxtBtn"
             style="@style/btnStyle"
