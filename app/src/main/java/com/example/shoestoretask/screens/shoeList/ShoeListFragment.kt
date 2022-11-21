@@ -1,4 +1,4 @@
-package com.example.shoestoretask.screens
+package com.example.shoestoretask.screens.shoeList
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

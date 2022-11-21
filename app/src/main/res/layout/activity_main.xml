@@ -21,7 +21,7 @@
         android:layout_height="match_parent"
         tools:layout="@layout/fragment_login"
         app:defaultNavHost="true"
-        app:navGraph="@navigation/navigation" />
+        app:navGraph="@navigation/nav_graph" />
     <!--    <Button-->
 <!--        android:id="@+id/goB"-->
 <!--        android:layout_width="wrap_content"-->
