@@ -26,11 +26,11 @@ class LoginFragment : Fragment() {
 
         Log.i("loginFragment", "test the second button")
 
-        binding?.regB?.setOnClickListener {
+        binding.regB.setOnClickListener {
                 view: View -> view.findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
         }
 
-        return binding?.root
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
