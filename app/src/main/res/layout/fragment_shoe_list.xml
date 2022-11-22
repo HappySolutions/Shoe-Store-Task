@@ -16,12 +16,14 @@
             android:id="@+id/addBotn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="322dp"
             android:layout_marginEnd="32dp"
+            android:layout_marginBottom="152dp"
             android:clickable="true"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="add"
+            app:layout_constraintBottom_toBottomOf="@+id/scrolView2"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.9" />
+            app:layout_constraintTop_toTopOf="@+id/scrolView2" />
 
         <ScrollView
             android:id="@+id/scrolView2"
