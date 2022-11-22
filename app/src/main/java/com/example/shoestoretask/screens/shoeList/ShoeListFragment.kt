@@ -8,9 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.shoestoretask.R
-import com.example.shoestoretask.databinding.FragmentShoeDetailsBinding
 import com.example.shoestoretask.databinding.FragmentShoeListBinding
-import com.example.shoestoretask.screens.welcome.WelcomeFragmentDirections
 
 
 class ShoeListFragment : Fragment() {
@@ -25,6 +23,7 @@ class ShoeListFragment : Fragment() {
         binding?.addBotn?.setOnClickListener { view: View -> Log.i("loginFragment", "test the first button")
             view.findNavController().navigate(ShoeListFragmentDirections.actionShoeListFragmentToShoeDetailsFragment())
         }
+        //LayoutInflater.from(activity).inflate(R.layout)
         setHasOptionsMenu(true)
         return binding?.root
     }

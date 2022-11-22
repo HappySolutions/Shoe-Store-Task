@@ -40,10 +40,17 @@
         <action
             android:id="@+id/action_shoeListFragment_to_shoeDetailsFragment"
             app:destination="@id/shoeDetailsFragment" />
+        <action
+            android:id="@+id/action_shoeListFragment_to_loginFragment"
+            app:popUpTo="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/shoeDetailsFragment"
         android:name="com.example.shoestoretask.screens.shoeDetails.ShoeDetailsFragment"
         android:label="fragment_shoe_details"
-        tools:layout="@layout/fragment_shoe_details" />
+        tools:layout="@layout/fragment_shoe_details" >
+        <action
+            android:id="@+id/action_shoeDetailsFragment_to_shoeListFragment"
+            app:popUpTo="@id/shoeListFragment" />
+    </fragment>
 </navigation>
