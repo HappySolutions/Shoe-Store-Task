@@ -11,10 +11,12 @@ import androidx.navigation.findNavController
 import com.example.shoestoretask.R
 import com.example.shoestoretask.databinding.FragmentLoginBinding
 import com.example.shoestoretask.screens.login.LoginFragmentDirections.Companion.actionLoginFragmentToWelcomeFragment
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class LoginFragment : Fragment() {
 
     private lateinit var binding: FragmentLoginBinding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -23,20 +25,16 @@ class LoginFragment : Fragment() {
         binding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_login,
                 container, false)
-        binding?.loginB?.setOnClickListener { view: View -> Log.i("loginFragment", "test the first button")
+       binding?.loginB?.setOnClickListener { view: View -> Log.i("loginFragment", "test the first button")
             view.findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
         }
+        Log.i("loginFragment", "test the second button")
+        binding?.regB?.setOnClickListener {
+                view: View -> view.findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
+    }
 
         return binding.root
-    }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        Log.i("loginFragment", "test the second button")
-        binding.regB.setOnClickListener {
-                view: View -> view.findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
-        }
     }
-
 
 }

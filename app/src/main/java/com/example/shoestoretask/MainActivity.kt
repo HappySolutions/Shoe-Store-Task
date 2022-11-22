@@ -14,24 +14,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val binding = DataBindingUtil.setContentView<ViewDataBinding>(this, R.layout.activity_main)
         Log.i("MainActivity", "call view-modelProvider")
-
         viewModel = ViewModelProvider(this)[ShoeViewModel::class.java]
-
-
-    }
-
-
-    //handle when user press back button
-    override fun onBackPressed() {
-        showAppClosingDialog()
-    }
-
-    private fun showAppClosingDialog() {
-        MaterialAlertDialogBuilder(this)
-            .setTitle("Warning")
-            .setMessage("Do you really want to close the app?")
-            .setPositiveButton("Yes") { _, _ -> finish() }
-            .setNegativeButton("No", null)
-            .show()
     }
 }
