@@ -1,11 +1,13 @@
-package com.example.shoestoretask.shoeDetails
+package com.example.shoestoretask.screens.shoeDetails
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import com.example.shoestoretask.R
+import com.example.shoestoretask.databinding.FragmentShoeDetailsBinding
 
 
 class ShoeDetailsFragment : Fragment() {
@@ -14,7 +16,10 @@ class ShoeDetailsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_shoe_details, container, false)
+        val binding: FragmentShoeDetailsBinding? =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_login,
+                container, false)
+    return binding?.root
     }
 
 }
