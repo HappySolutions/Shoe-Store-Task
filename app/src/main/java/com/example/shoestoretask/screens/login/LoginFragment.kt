@@ -1,6 +1,7 @@
 package com.example.shoestoretask.screens.login
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -13,23 +14,32 @@ import com.example.shoestoretask.screens.login.LoginFragmentDirections.Companion
 
 class LoginFragment : Fragment() {
 
-
+    var binding: FragmentLoginBinding? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         //return inflater.inflate(R.layout.fragment_login, container, false)
-        val binding: FragmentLoginBinding? =
+        binding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_login,
                 container, false)
-        binding?.loginB?.setOnClickListener {
-                view: View -> view.findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
-        }
+
+        Log.i("loginFragment", "test the second button")
+
         binding?.regB?.setOnClickListener {
                 view: View -> view.findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
         }
 
         return binding?.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        Log.i("loginFragment", "test the first button")
+
+        binding?.loginB?.setOnClickListener {
+                view: View -> view.findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
+        }
     }
 
 
