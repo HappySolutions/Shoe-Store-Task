@@ -23,11 +23,8 @@ class LoginFragment : Fragment() {
         binding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_login,
                 container, false)
-
-        Log.i("loginFragment", "test the second button")
-
-        binding.regB.setOnClickListener {
-                view: View -> view.findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
+        binding?.loginB?.setOnClickListener { view: View -> Log.i("loginFragment", "test the first button")
+            view.findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
         }
 
         return binding.root
@@ -35,9 +32,9 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        binding?.loginB?.setOnClickListener { view: View -> Log.i("loginFragment", "test the first button")
-            view.findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
+        Log.i("loginFragment", "test the second button")
+        binding.regB.setOnClickListener {
+                view: View -> view.findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
         }
     }
 
