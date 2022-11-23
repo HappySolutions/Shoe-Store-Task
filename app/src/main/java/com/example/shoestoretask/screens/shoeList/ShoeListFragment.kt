@@ -1,17 +1,20 @@
 package com.example.shoestoretask.screens.shoeList
 
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
-import androidx.navigation.ui.NavigationUI
+import androidx.navigation.fragment.findNavController
 import com.example.shoestoretask.R
+import com.example.shoestoretask.ShoeViewModel
 import com.example.shoestoretask.databinding.FragmentShoeListBinding
 
 
 class ShoeListFragment : Fragment() {
+    private lateinit var viewModel: ShoeViewModel
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -20,10 +23,27 @@ class ShoeListFragment : Fragment() {
         val binding: FragmentShoeListBinding? =
             DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_list,
                 container, false)
-        binding?.addBotn?.setOnClickListener { view: View -> Log.i("loginFragment", "test the first button")
+
+        viewModel = ViewModelProvider(requireActivity())[ShoeViewModel::class.java]
+
+        binding?.addBotn?.setOnClickListener { view: View ->
             view.findNavController().navigate(ShoeListFragmentDirections.actionShoeListFragmentToShoeDetailsFragment())
         }
+        val linearLayoutView = binding?.linearLayout
         //LayoutInflater.from(activity).inflate(R.layout)
+
+        //observe the viewmodel
+        viewModel.shoeListLivedata.observe(viewLifecycleOwner){ shoeList ->
+            for (i in 0 until shoeList.size){
+                val view: FragmentShoeListBinding = DataBindingUtil.inflate(inflater,
+                    R.layout.fragment_shoe_details, binding?.linearLayout ,false)
+                view.shoe = shoeList[i]
+
+                //add the linear view programmatically
+                linearLayoutView?.addView(view.root)
+            }
+
+        }
         setHasOptionsMenu(true)
         return binding?.root
     }
@@ -34,6 +54,7 @@ class ShoeListFragment : Fragment() {
 
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return NavigationUI.onNavDestinationSelected(item, requireView().findNavController() ) || super.onOptionsItemSelected(item)
+        findNavController().navigate(R.id.action_shoeListFragment_to_loginFragment)
+        return  super.onOptionsItemSelected(item)
     }
 }
