@@ -25,6 +25,7 @@ class ShoeListFragment : Fragment() {
             DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_list,
                 container, false)
 
+        //call the viewModel
         viewModel = ViewModelProvider(requireActivity())[ShoeViewModel::class.java]
 
         binding?.addBotn?.setOnClickListener { view: View ->

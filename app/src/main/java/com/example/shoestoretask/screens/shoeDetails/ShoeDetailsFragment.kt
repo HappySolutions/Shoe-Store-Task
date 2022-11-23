@@ -26,6 +26,7 @@ class ShoeDetailsFragment : Fragment() {
         val binding: FragmentShoeDetailsBinding? =
             DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_details,
                 container, false)
+        //call the viewModel
         viewModel = ViewModelProvider(requireActivity())[ShoeViewModel::class.java]
 
         var newShoe = Shoe("", 0.0, "", "")

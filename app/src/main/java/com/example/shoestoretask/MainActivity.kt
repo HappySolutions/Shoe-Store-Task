@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
          setUpNavController()
     }
 
+    //to make sure that when user logout he goes to the login fragment without any backstack fragments
     override fun onSupportNavigateUp(): Boolean {
         val navigation = this.findNavController(R.id.nav_host_fragment)
         return if (navigation.currentDestination?.id == R.id.shoeListFragment ||
@@ -32,6 +33,7 @@ class MainActivity : AppCompatActivity() {
         onSupportNavigateUp()
     }
 
+    //To setup the AppConfiguration
     private fun setUpNavController() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController

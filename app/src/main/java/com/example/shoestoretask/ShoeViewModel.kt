@@ -21,5 +21,5 @@ class ShoeViewModel : ViewModel() {
      fun initList(shoe: Shoe) {
         shoeList.add(shoe)
         shoeListLivedata.value = shoeList
-    }
+     }
     }
