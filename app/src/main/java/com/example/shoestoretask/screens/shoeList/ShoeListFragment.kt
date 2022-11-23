@@ -9,6 +9,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.shoestoretask.R
 import com.example.shoestoretask.ShoeViewModel
+import com.example.shoestoretask.databinding.FragmentShoeItemsBinding
 import com.example.shoestoretask.databinding.FragmentShoeListBinding
 
 
@@ -30,13 +31,12 @@ class ShoeListFragment : Fragment() {
             view.findNavController().navigate(ShoeListFragmentDirections.actionShoeListFragmentToShoeDetailsFragment())
         }
         val linearLayoutView = binding?.linearLayout
-        //LayoutInflater.from(activity).inflate(R.layout)
 
         //observe the viewmodel
         viewModel.shoeListLivedata.observe(viewLifecycleOwner){ shoeList ->
             for (i in 0 until shoeList.size){
-                val view: FragmentShoeListBinding = DataBindingUtil.inflate(inflater,
-                    R.layout.fragment_shoe_details, binding?.linearLayout ,false)
+                val view: FragmentShoeItemsBinding = DataBindingUtil.inflate(inflater,
+                    R.layout.fragment_shoe_items, linearLayoutView ,false)
                 view.shoe = shoeList[i]
 
                 //add the linear view programmatically

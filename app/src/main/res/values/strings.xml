@@ -9,4 +9,6 @@
     <string name="description">Description</string>
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
+    <string name="shoe">Shoe</string>
+    <string name="discreption">Discreption</string>
 </resources>
