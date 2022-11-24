@@ -11,4 +11,15 @@
     <string name="cancel">Cancel</string>
     <string name="shoe">Shoe</string>
     <string name="discreption">Discreption</string>
+    <string name="login">login</string>
+    <string name="email">email</string>
+    <string name="password">password</string>
+    <string name="register">register</string>
+    <string name="go_to_shoelist">Go To ShoeList</string>
+    <string name="pay_for_your_order_online">Pay for your order online</string>
+    <string name="secure_credit_card_payment">Secure credit card payment</string>
+    <string name="enjoy_your_order_in_two_days">Enjoy your order in two days</string>
+    <string name="next">Next</string>
+    <string name="welcome_to_shoe_store">Welcome To Shoe Store</string>
+    <string name="take_the_best_shopping_journy_ever">Take the best shopping journy ever</string>
 </resources>
