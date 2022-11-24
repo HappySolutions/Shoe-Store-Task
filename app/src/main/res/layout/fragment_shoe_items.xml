@@ -9,6 +9,7 @@
             name="shoe"
             type="com.example.shoestoretask.models.Shoe" />
     </data>
+    <!--I used linearLayout because the layout is simple just a few vertical stacks no need for complex layout-->
     <LinearLayout
         android:orientation="vertical"
         android:id="@+id/shoesItem"

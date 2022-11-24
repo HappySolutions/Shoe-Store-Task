@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".screens.login.LoginFragment">
-
+    <!--I used constraint layout because I found it much easier to control the positions of
+        each view related to another one like each editText view in front of its textView-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -19,7 +20,9 @@
             android:inputType="textEmailAddress"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView2"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:autofillHints="email"
+            tools:ignore="LabelFor" />
 
         <EditText
             android:id="@+id/pass"
@@ -32,7 +35,9 @@
             android:inputType="textPassword"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView3"
-            app:layout_constraintTop_toBottomOf="@+id/email" />
+            app:layout_constraintTop_toBottomOf="@+id/email"
+            android:autofillHints="password"
+            tools:ignore="LabelFor" />
 
         <Button
             android:id="@+id/loginB"
@@ -40,7 +45,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="64dp"
-            android:text="login"
+            android:text="@string/login"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/pass" />
@@ -51,7 +56,7 @@
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:text="email"
+            android:text="@string/email"
             app:layout_constraintBaseline_toBaselineOf="@+id/email"
             app:layout_constraintEnd_toStartOf="@+id/email"
             app:layout_constraintHorizontal_chainStyle="packed"
@@ -63,7 +68,7 @@
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:text="password"
+            android:text="@string/password"
             app:layout_constraintBaseline_toBaselineOf="@+id/pass"
             app:layout_constraintEnd_toStartOf="@+id/pass"
             app:layout_constraintHorizontal_chainStyle="packed"
@@ -75,7 +80,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:text="register"
+            android:text="@string/register"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/loginB" />

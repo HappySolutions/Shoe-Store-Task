@@ -7,7 +7,8 @@
     <data>
         <variable name="shoe" type="com.example.shoestoretask.models.Shoe"/>
     </data>
-
+    <!--I used constraint layout because I found it much easier to control the positions of
+            each view related to another one like each editText view in front of its textView-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/shoeItem"
         android:layout_width="match_parent"

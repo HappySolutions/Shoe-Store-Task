@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".MainActivity">
-<!--I used linearLayout because the layout is simple just 2 vertical stacks no need for complix layou-->
+<!--I used linearLayout because the layout is simple just 2 vertical stacks no need for complex layout-->
 <androidx.appcompat.widget.LinearLayoutCompat
     android:layout_width="match_parent"
     android:layout_height="match_parent"

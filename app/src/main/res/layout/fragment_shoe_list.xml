@@ -8,6 +8,9 @@
             name="shoe"
             type="com.example.shoestoretask.models.Shoe" />
     </data>
+    <!--I used constraint layout because this was complex layout to position the FAB in
+    exact place with the scroll view-->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
