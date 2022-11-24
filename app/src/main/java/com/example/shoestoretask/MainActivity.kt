@@ -2,16 +2,20 @@ package com.example.shoestoretask
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.ViewDataBinding
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ViewDataBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // implementing the dataBinding for this activity
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        setContentView(R.layout.activity_main)
         setSupportActionBar(findViewById(R.id.toolBar))
 
          setUpNavController()
