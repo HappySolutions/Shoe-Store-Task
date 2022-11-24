@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.shoestoretask.R
@@ -14,7 +14,10 @@ import com.example.shoestoretask.databinding.FragmentShoeListBinding
 
 
 class ShoeListFragment : Fragment() {
-    private lateinit var viewModel: ShoeViewModel
+    //private lateinit var viewModel: ShoeViewModel
+
+    // Get a reference to the ViewModel scoped to its Activity useing Android KTX library as per suggestion
+    private val viewModel by activityViewModels<ShoeViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,7 +29,7 @@ class ShoeListFragment : Fragment() {
                 container, false)
 
         //call the viewModel
-        viewModel = ViewModelProvider(requireActivity())[ShoeViewModel::class.java]
+        //viewModel = ViewModelProvider(requireActivity())[ShoeViewModel::class.java]
 
         binding?.addBotn?.setOnClickListener { view: View ->
             view.findNavController().navigate(ShoeListFragmentDirections.actionShoeListFragmentToShoeDetailsFragment())
